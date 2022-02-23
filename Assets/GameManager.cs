@@ -15,6 +15,28 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (this.DestroyAllBlocks())
+        {
+            // ゲームクリア
+            Debug.Log("ゲームクリア");
+        }
+    }
 
+    // 全ブロックの削除チェック
+    private bool DestroyAllBlocks ()
+    {
+        foreach (Block block in blocks)
+        {
+            if (block != null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("ゲームオーバー");
     }
 }
