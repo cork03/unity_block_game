@@ -1,6 +1,3 @@
-using System.Globalization;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -24,7 +21,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Finish")
+        if (collision.gameObject.tag == "Finish" && gameManager.isGameClear == false)
         {
             Destroy(this.gameObject);
             gameManager.GameOver();
