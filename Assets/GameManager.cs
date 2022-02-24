@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public Block[] blocks;
     public GameObject gameOverUI;
     public GameObject gameClearUI;
+    public GameObject gameStartUI;
+    public Ball ball;
 
     public bool isGameClear = false;
 
@@ -41,6 +43,13 @@ public class GameManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void GameStart()
+    {
+        Debug.Log("ゲームスタート");
+        ball.Shot();
+        gameStartUI.SetActive(false);
     }
 
     public void GameOver()

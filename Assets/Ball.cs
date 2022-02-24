@@ -9,8 +9,6 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myRigid = this.GetComponent<Rigidbody>();
-        myRigid.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
@@ -26,5 +24,12 @@ public class Ball : MonoBehaviour
             Destroy(this.gameObject);
             gameManager.GameOver();
         }
+    }
+
+    // ボールの発射
+    public void Shot()
+    {
+        myRigid = this.GetComponent<Rigidbody>();
+        myRigid.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
     }
 }
